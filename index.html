@@ -7,28 +7,38 @@
     <link rel="shortcut icon" href="assets/images/favicons/icons8-paleta-de-cores-emoji-16.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="assets/js/effects.js" defer></script>
     <script src="assets/js/script.js" defer></script>
     <title>Trilha Front-End</title>
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <nav class="nav-sections">
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#gostos-pessoais">Gostos Pessoais</a></li>
-                <li><a href="#motivacao">Motivações</a></li>
-                <li><a href="#contato">Entre em contato</a></li>
+            <button class="btn" id="btn-menu" 
+            aria-label="Abrir menu"
+            aria-haspopup="true"
+            aria-controls="menu"
+            aria-expanded="false"
+            >
+            <img id="icon-menu" src="assets/images/menu-svgrepo-com.svg" alt="icone menu">
+            </button>
+            <ul class="menu" role="menu">
+                <li><a class="item" href="#sobre">Sobre</a></li>
+                <li><a class="item" href="#gostos-pessoais">Gostos Pessoais</a></li>
+                <li><a class="item" href="#motivacao">Motivações</a></li>
+                <li><a class="item" href="#contato">Entre em contato</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section>
-            <h1>Olá, sou Luiz Otávio dos Santos, e hoje você vai conhecer um pouco sobre mim.</h1>
-            <figure>
+            <h1 class="title">Olá, sou Luiz Otávio dos Santos, e hoje você vai conhecer um pouco sobre mim.</h1>
+            <figure class="figure">
                 <img src="assets/images/profile.jpeg" alt="imagem de perfil">
             </figure>
-            <p id="sobre">
+            <p class="txt-top" id="sobre">
                 Tenho 26 anos e sempre fui apaixonado por tecnologia. Amo computadores e tudo que envolve esse universo.
                 Por esse motivo, comecei a estudar programação, com foco em desenvolvimento web. Meu desejo é me tornar
                 um profissional Front-End, capaz de criar interfaces amigáveis e que proporcionem uma boa experiência
@@ -36,8 +46,8 @@
             </p>
         </section>
         <section id="gostos-pessoais">
-            <h2>Meus gostos pessoais</h2>
-            <p>
+            <h2 class="sub-title1">Meus gostos pessoais</h2>
+            <p class="txt1">
                 Se você procura alguém que adora viver novas experiências, está no lugar certo! Nos momentos de lazer,
                 me teletransporto para mundos abertos e cheios de aventura em jogos de sobrevivência. Quando não estou
                 salvando mundos virtuais, me perco em playlists ecléticas que variam de rock a samba, proporcionando
@@ -45,16 +55,17 @@
             </p>
         </section>
         <section id="motivacao">
-            <h2>
+            <h2 class="sub-title2">
                 Motivações
             </h2>
-            <p>
+            <p class="txt2">
                 Minha principal motivação em fazer parte da comunidade Código Certo Coders é a chance de adquirir experiências com projetos reais e me conectar com mais pessoas da área. Participar dessa comunidade me permitirá trocar conhecimentos, aprender novas técnicas e acompanhar as tendências mais recentes em desenvolvimento. Além disso, acredito que colaborar com outros profissionais apaixonados por tecnologia vai me inspirar e me ajudar a crescer tanto pessoal quanto profissionalmente.
             </p>
         </section>
     </main>
     <footer id="contato">
-        <p>Minhas redes</p>
+        <a class="topo" href="#header"><img src="assets/images/arrow-narrow-up-svgrepo-com.svg" alt="Seta para cima"></a>
+        <h3>Minhas redes</h3>
         <ul>
             <li><a href="https://www.linkedin.com/in/luizotvioo/" target="_blank" rel="noopener noreferrer"><i
                         class="bi bi-linkedin"></i></a></li>

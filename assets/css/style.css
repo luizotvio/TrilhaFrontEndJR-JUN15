@@ -9,7 +9,8 @@
 }
 
 :root{
-    --background-gradient: radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(0,0,0,1) 76%);
+    --background-gradient-dark: radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(0,0,0,1) 76%);
+    --background-gradient-white: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,0,0,1) 76%);
     --black-color: #000000;
     --red-color: #e53939;
     --transparent-red-color: #e539391a;
@@ -22,7 +23,7 @@ html{
 body{
     width: 100%;
     min-height: 100vh;
-    background: var(--background-gradient);
+    background: var(--background-gradient-dark);
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: var(--white-color);
@@ -34,14 +35,27 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 .625rem;
+}
+
+.title, .figure, .txt-top{
+    visibility: hidden;
 }
 .nav-sections{
-    width: 80%;
+    width: 100%;
     margin: 20px 10px;
     padding: 20px;
     border-radius: 12px;
     background-color: var(--transparent-red-color);
     backdrop-filter: blur(16px) saturate(120%);
+}
+#btn-menu{
+    height: auto;
+    padding: 0.5rem;
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 .nav-sections ul{
     display: flex;
@@ -72,8 +86,12 @@ main{
 
 section{
     width: 80%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 50px 10px;
-    text-align: center;
 }
 section h1, h2, section p{
     margin-bottom: 1.25rem;
@@ -85,15 +103,32 @@ section h1{
 
 section figure{
     margin: 20px 0;
+    text-align: center;
 }
 section figure img{
     width: 22%;
     border-radius: 50%;
 }
+section > p{
+    width: 100%;
+}
 
 footer{
     width: 100%;
     text-align: center;
+}
+footer .topo{
+    background-color: var(--transparent-red-color);
+    border-radius: 100%;
+    padding: .3125rem;
+    position: fixed;
+    bottom: 3.125rem;
+    right: 1.25rem;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.topo.show{
+    opacity: 1;
 }
 footer ul{
     display: flex;
@@ -116,8 +151,28 @@ footer li a:hover{
     color: var(--red-color);
 }
 footer .copyright{
-    font-size: .9375rem;
+    font-size: .625rem;
     background-color: var(--black-color);
     padding: .625rem 0;
     margin-top: 20px;
+}
+
+@media (width <= 630px) {
+    .nav-sections{
+        width: 90%;
+    }
+    #btn-menu{
+        display: block;
+        
+    }
+    .menu a{
+        display: none;
+    }
+    section figure img{
+        width: 50%;
+    }
+}
+
+.menu.active a{
+    display: block;
 }
